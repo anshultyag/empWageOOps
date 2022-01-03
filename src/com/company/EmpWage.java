@@ -18,7 +18,7 @@ public class EmpWage {
                      empHrs = 4;
                      break;
                 default:
-                    empHrs = 0;00
+                    empHrs = 0;
                     break;
              }
             totalEmpHrs= totalEmpHrs + empHrs;
