@@ -21,7 +21,7 @@ public class EmpWage {
                     empHrs = 0;
                     break;
              }
-            totalEmpHrs= empHrs + 0;
+           totalEmpHrs= totalEmpHrs + empHrs;
             totalWorkingDays++;
         }
         totalWage=  totalEmpHrs * wagePerHour;
