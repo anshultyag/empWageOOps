@@ -41,5 +41,8 @@ public class EmpWage {
         EmpWage tata =new EmpWage("TATA",20,21,100);
         System.out.println("Total Emp Hours of " + tata.company +" is " +tata.computeEmpWage());
         System.out.println("Total Emp wage for  " + tata.company +" is " +tata.computeEmpWage() );
+        EmpWage honda =new EmpWage("Honda",10,30,150);
+        System.out.println("Total Emp Hours of " + honda.company +" is " +honda.computeEmpWage());
+        System.out.println("Total Emp wage for  " + honda.company +" is " +honda.computeEmpWage() );
     }
 }
