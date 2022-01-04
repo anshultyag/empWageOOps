@@ -8,7 +8,7 @@ public class EmpWage {
         int totalEmpHrs = 0;
         int totalWage = 0;
         int totalWorkingDays=0;
-        while (numOfWorkingDays >= totalWorkingDays && maxHours > totalEmpHrs) {
+        while (numOfWorkingDays > totalWorkingDays && maxHours >totalEmpHrs) {
              int empCheck = (int) Math.floor(Math.random() * 10) % 3;
              switch (empCheck) {
                 case (PART_TIME):
