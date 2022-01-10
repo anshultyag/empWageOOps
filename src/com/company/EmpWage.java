@@ -7,6 +7,7 @@ public class EmpWage {
     private final int wagePerHour;
     private final int numOfWorkingDays;
     private final int maxHours;
+    private int totalWage;
 
     public EmpWage(String company, int wagePerHour, int numOfWorkingDays, int maxHours) {
         this.company = company;
@@ -14,8 +15,8 @@ public class EmpWage {
         this.numOfWorkingDays = numOfWorkingDays;
         this.maxHours = maxHours;
     }
-    public int computeEmpWage() {
-        int empHrs = 0, totalEmpHrs = 0, totalWage = 0, totalWorkingDays = 0;
+    public void computeEmpWage() {
+        int empHrs = 0, totalEmpHrs = 0,totalWorkingDays = 0;
         while (numOfWorkingDays > totalWorkingDays && maxHours > totalEmpHrs) {
             int empCheck = (int) Math.floor(Math.random() * 10) % 3;
             switch (empCheck) {
@@ -27,22 +28,28 @@ public class EmpWage {
                     break;
                 default:
                     empHrs = 0;
-                    break;
+                    totalWorkingDays++;
             }
-            totalEmpHrs = totalEmpHrs + empHrs;
-            totalWorkingDays++;
-        }
-        System.out.println("Total Emp days : " + totalWorkingDays);
+            totalEmpHrs = totalEmpHrs  + empHrs;
+            System.out.println("Total Emp days : " + totalWorkingDays + "  Emp Hr : " + empHrs);
+       }
         totalWage = totalEmpHrs * wagePerHour;
-        return  totalEmpHrs + totalWage;
+    }
+    @Override
+    public String toString(){
+        return "Total Emp wage for company : " + company + " is : " + totalWage;
     }
 
     public static void main(String[] args) {
+        System.out.println("Welcome to employee wage");
         EmpWage tata =new EmpWage("TATA",20,21,100);
-        System.out.println("Total Emp Hours of " + tata.company +" is " +tata.computeEmpWage());
-        System.out.println("Total Emp wage for  " + tata.company +" is " +tata.computeEmpWage() );
-        EmpWage honda =new EmpWage("Honda",10,30,150);
-        System.out.println("Total Emp Hours of " + honda.company +" is " +honda.computeEmpWage());
-        System.out.println("Total Emp wage for  " + honda.company +" is " +honda.computeEmpWage() );
+        tata.computeEmpWage();
+        System.out.println(tata);
+
+        
+//         to input by user
+//        EmpWage honda2 =new EmpWage();
+//        Scanner obj = new Scanner(System.in);
+//        honda2.company= obj.next();
     }
 }
