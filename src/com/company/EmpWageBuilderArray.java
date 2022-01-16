@@ -43,5 +43,7 @@ public class EmpWageBuilderArray {
         empWageBuilder.addCompanyEmpWage("TATA", 20, 20, 20);
         empWageBuilder.addCompanyEmpWage("Reliance", 22, 4, 20);
          System.out.println("Total wage for TATA : " );
+        empWageBuilder.computeEmpWage();
+        System.out.println("Total wage for TATA : " + empWageBuilder.getTotalWage("TATA"));
     }
 }
