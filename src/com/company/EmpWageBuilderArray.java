@@ -22,7 +22,20 @@ public class EmpWageBuilderArray {
         companyEmpWageList.add(companyEmpWage);
         companyToEmpWageMap.put(company, companyEmpWage);
     }
+    private void computeEmpWage() {
+        for (int i = 0; i < numOfCompany; i++) {
+            CompanyEmpWage companyEmpWage = companyEmpWageList.get(i);
+            companyEmpWage.setTotalEmpWage(this.computeEmpWage(companyEmpWage));
+            System.out.println(companyEmpWage);
+        }
+    }
 
+    public int computeEmpWage(CompanyEmpWage companyEmpWage) {...}
+
+    @Override
+    public int getTotalWage(String company) {
+        return companyToEmpWageMap.get(company).totalEmpWage;
+    }
 
     public static void main(String[] args) {
         System.out.println("Welcome to employee wage");
